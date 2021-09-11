@@ -1,17 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FormContainer from "../FormContainer";
 import NoteItems from "../NoteItems";
 
 function NoteContainer() {
   const [data, setData] = useState([]);
-  useEffect(() => {
-   /*  console.log("data yenilendi : ");
-    console.log(data); */
-  }, [data]);
+  const [text, setText] = useState("");
+  const [activeButton, setActiveButton] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <>
-      <FormContainer data={data} setData={setData} />
-      <NoteItems data={data} setData={setData} />
+      <FormContainer
+        data={data}
+        setData={setData}
+        text={text}
+        setText={setText}
+        setActiveButton={setActiveButton}
+        activeButton={activeButton}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+      />
+      <NoteItems
+        data={data}
+        setData={setData}
+        setText={setText}
+        setActiveButton={setActiveButton}
+        setActiveIndex={setActiveIndex}
+      />
     </>
   );
 }

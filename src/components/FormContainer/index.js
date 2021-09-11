@@ -1,14 +1,20 @@
 import { Form } from "react-bootstrap";
-import React, { useState } from "react";
 import TextArea from "../Textarea";
 import ButtonComponent from "../Button";
 
-function FormContainer({ data, setData }) {
-  const [text,setText] = useState('')
+function FormContainer({ data, setData, text, setText , activeButton , setActiveButton , activeIndex , setActiveIndex }) {
   return (
     <Form className="w-50">
       <TextArea text={text} setText={setText} />
-      <ButtonComponent text={text} data={data} setData={setData} setText={setText} />
+      <ButtonComponent
+        text={text}
+        data={data}
+        setData={setData}
+        setText={setText}
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+        activeIndex={activeIndex}
+      />
     </Form>
   );
 }

@@ -1,22 +1,49 @@
-import { Alert, Button } from "react-bootstrap";
+import { Alert, Button, ButtonGroup } from "react-bootstrap";
 
-function NoteItems({ data, setData }) {
+function NoteItems({
+  data,
+  setData,
+  setText,
+  setActiveButton,
+  setActiveIndex,
+}) {
   const handleClick = (e) => {
     const deletedItem = e.target.value;
     setData(data.filter((item) => item !== deletedItem));
   };
+  const handleEdit = (e) => {
+    setText(e.target.value);
+    setActiveButton(true);
+    setActiveIndex(e.target.id);
+  };
   return (
     <div className="w-50">
       {data &&
-        data.sort((a, b) => {
-          return b > a;
-        }) &&
         data.map((item, index) => (
           <Alert key={index} variant="info" className="mt-3 alert-box">
-            <span>{item}</span>
-            <Button title="Delete Note" value={item} onClick={handleClick}>
-              X
-            </Button>
+            <span style={{ fontWeight: "600" }}>{item}</span>
+            <ButtonGroup>
+              <Button
+                variant="danger"
+                className="mx-1"
+                title="Delete Note"
+                value={item}
+                id={index}
+                onClick={handleClick}
+              >
+                Delete
+              </Button>
+              <Button
+                variant="warning"
+                className="mx-1"
+                title="Edit Note"
+                value={item}
+                id={index}
+                onClick={handleEdit}
+              >
+                Edit
+              </Button>
+            </ButtonGroup>
           </Alert>
         ))}
     </div>

@@ -1,17 +1,54 @@
 import { Button } from "react-bootstrap";
 
-function ButtonComponent({ data, setData, text, setText }) {
-  const handleClick = () => {
+function ButtonComponent({
+  data,
+  setData,
+  text,
+  setText,
+  setActiveButton,
+  activeButton,
+  activeIndex,
+}) {
+  const handleClick = (e) => {
     if (text === "") {
       alert("Please fill in the note");
-    } else if (data.includes(text)) {
-      alert("You have already added such a note!");
     } else {
-      setData([...data, text]);
-      setText("");
+      switch (e.target.value) {
+        case "edit":
+          let datas = [...data];
+          let index = activeIndex;
+          datas[index] = text;
+          setData(datas);
+          setActiveButton(false);
+          setText("");
+          break;
+        case "add":
+          if (data.includes(text)) {
+            alert("You have already added such a note!");
+          } else {
+            setData([...data, text]);
+            setText("");
+          }
+          break;
+        default:
+          break;
+      }
     }
   };
-  return <Button onClick={handleClick}>Create</Button>;
+
+  if (activeButton) {
+    return (
+      <Button variant="warning" value="edit" onClick={handleClick}>
+        Update
+      </Button>
+    );
+  } else {
+    return (
+      <Button onClick={handleClick} value="add">
+        Create
+      </Button>
+    );
+  }
 }
 
 export default ButtonComponent;
