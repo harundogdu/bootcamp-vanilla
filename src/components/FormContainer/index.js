@@ -8,7 +8,7 @@ function FormContainer({ data, setData }) {
   return (
     <Form className="w-50">
       <TextArea text={text} setText={setText} />
-      <ButtonComponent />
+      <ButtonComponent text={text} data={data} setData={setData} setText={setText} />
     </Form>
   );
 }
