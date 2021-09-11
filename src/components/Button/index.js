@@ -8,7 +8,7 @@ function ButtonComponent({ data, setData, text, setText }) {
     setData([...data, text]);
     setText("");
   };
-  return <Button onClick={handleClick}>Add Item</Button>;
+  return <Button onClick={handleClick}>Create</Button>;
 }
 
 export default ButtonComponent;

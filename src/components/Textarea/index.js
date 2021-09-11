@@ -7,6 +7,7 @@ function TextArea({ text, setText }) {
     <Form.Group className="mb-3">
       <Form.Label>Add a new Note!</Form.Label>
       <Form.Control
+        placeholder="Enter ur notes in here..."
         as="textarea"
         rows={7}
         value={text}
