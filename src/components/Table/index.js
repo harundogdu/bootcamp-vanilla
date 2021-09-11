@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import data from '../../assets/currency';
 import Tbody from '../Tbody';
 import Thead from '../Thead';
