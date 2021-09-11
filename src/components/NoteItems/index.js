@@ -45,7 +45,7 @@ function NoteItems({
               </Button>
             </ButtonGroup>
           </Alert>
-        ))}
+        )).reverse()}
     </div>
   );
 }
