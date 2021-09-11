@@ -5,8 +5,8 @@ import NoteItems from "../NoteItems";
 function NoteContainer() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    console.log("data yenilendi : ");
-    console.log(data);
+   /*  console.log("data yenilendi : ");
+    console.log(data); */
   }, [data]);
   return (
     <>

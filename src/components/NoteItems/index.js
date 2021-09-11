@@ -1,4 +1,3 @@
-import React from "react";
 import { Alert, Button } from "react-bootstrap";
 
 function NoteItems({ data, setData }) {
@@ -9,6 +8,9 @@ function NoteItems({ data, setData }) {
   return (
     <div className="w-50">
       {data &&
+        data.sort((a, b) => {
+          return b > a;
+        }) &&
         data.map((item, index) => (
           <Alert key={index} variant="info" className="mt-3 alert-box">
             <span>{item}</span>
