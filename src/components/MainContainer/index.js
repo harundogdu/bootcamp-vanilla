@@ -10,18 +10,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 function MainContainer() {
   const { theme, setTheme } = useTheme();
+  const handleClick = (e) => {
+    e.preventDefault();
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
     <div className={`App ${theme}`}>
       <NotesContextProvider>
         <Router>
-          <a
-            href="#!"
+          <button
             id="btnTheme"
             className={`float-start theme-btn-${theme}`}
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={handleClick}
           >
             <FontAwesomeIcon icon={faMoon} />
-          </a>
+          </button>
           <Switch>
             <Route exact path="/posts/:postId">
               <NoteDetails />

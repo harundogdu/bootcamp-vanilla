@@ -53,13 +53,23 @@
     transition: 400ms all linear;
 }
 
-.App.dark a,
+.App.dark #btnTheme,
 .App.dark p,
 .App.dark label {
     color: #fff;
 }
 
-.App.light a,
+.App.dark #btnTheme{
+    background-color: transparent;
+    border: none;
+}
+
+.App.light #btnTheme{
+    background-color: transparent;
+    border: none;
+}
+
+.App.light #btnTheme,
 .App.light p,
 .App.light label {
     color: #2A0944;
