@@ -26,3 +26,41 @@
     width: 75%;
     color: rgb(82, 79, 79);
 }
+
+#btnTheme {
+    padding: 10px;
+    font-size: 18px;
+    transition: 300ms all linear;
+}
+
+.theme-btn-dark{
+    color:#fff;
+}
+.theme-btn-light{
+    color:#2A0944;
+}
+
+/* app */
+.App.light {
+    background: #fff !important;
+    color: #2A0944 !important;
+    transition: 400ms all linear;
+}
+
+.App.dark {
+    background: #2A0944 !important;
+    color: #fff !important;
+    transition: 400ms all linear;
+}
+
+.App.dark a,
+.App.dark p,
+.App.dark label {
+    color: #fff;
+}
+
+.App.light a,
+.App.light p,
+.App.light label {
+    color: #2A0944;
+}
