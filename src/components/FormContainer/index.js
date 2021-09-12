@@ -4,7 +4,7 @@ import ButtonComponent from "../Button";
 
 function FormContainer({ data, setData, text, setText , activeButton , setActiveButton , activeIndex , setActiveIndex }) {
   return (
-    <Form className="w-50">
+    <Form className="mt-3 w-50">
       <TextArea text={text} setText={setText} />
       <ButtonComponent
         text={text}

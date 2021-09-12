@@ -26,7 +26,7 @@ function NoteItems({
               <ButtonGroup>
                 <NavLink to={`/posts/${index}`}>
                   <Button
-                    variant="info"
+                    variant="success"
                     className="mx-1"
                     title="Show Note"
                     value={item}
