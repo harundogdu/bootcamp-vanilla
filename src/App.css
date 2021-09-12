@@ -1,4 +1,4 @@
-.App{
+.App {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,8 +6,23 @@
     height: 100vh;
     flex-direction: column;
 }
-.alert-box{
+
+.alert-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.note_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.note_details p {
+    width: 75%;
+    color: rgb(82, 79, 79);
 }
