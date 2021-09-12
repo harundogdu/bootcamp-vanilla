@@ -3,22 +3,23 @@ import NoteContainer from "./components/NoteContainer";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NoteDetails from "./components/NoteDetails";
-import { useState } from "react";
+import { NotesContextProvider } from "./components/Contexts/NotesContext";
 
 const App = () => {
-  const [data, setData] = useState([]);
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/posts/:postId">
-            <NoteDetails data={data} />
-          </Route>
-          <Route exact path="/">
-            <NoteContainer data={data} setData={setData} />
-          </Route>
-        </Switch>
-      </Router>
+      <NotesContextProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/posts/:postId">
+              <NoteDetails />
+            </Route>
+            <Route exact path="/">
+              <NoteContainer />
+            </Route>
+          </Switch>
+        </Router>
+      </NotesContextProvider>
     </div>
   );
 };

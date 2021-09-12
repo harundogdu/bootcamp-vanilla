@@ -1,5 +1,7 @@
 import { Form } from "react-bootstrap";
-function TextArea({ text, setText }) {
+import { useNotes } from "../Contexts/NotesContext";
+function TextArea() {
+  const { text, setText } = useNotes();
   const handleChange = (e) => {
     setText(e.target.value);
   };

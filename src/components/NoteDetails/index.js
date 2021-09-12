@@ -2,9 +2,11 @@ import React from "react";
 import { useParams } from "react-router";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { useNotes } from "../Contexts/NotesContext";
 
-function NoteDetails({ data }) {
-  let { postId } = useParams(); 
+function NoteDetails() {
+  const { data } = useNotes();
+  let { postId } = useParams();
   return (
     <div className="note_details">
       <h1>Note Details</h1>

@@ -1,14 +1,17 @@
 import { Button } from "react-bootstrap";
+import { useNotes } from "../Contexts/NotesContext";
 
-function ButtonComponent({
-  data,
-  setData,
-  text,
-  setText,
-  setActiveButton,
-  activeButton,
-  activeIndex,
-}) {
+function ButtonComponent() {
+  const {
+    data,
+    setData,
+    text,
+    setText,
+    setActiveButton,
+    activeButton,
+    activeIndex,
+  } = useNotes();
+
   const handleClick = (e) => {
     if (text === "") {
       alert("Please fill in the note");

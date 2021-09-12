@@ -1,16 +1,15 @@
 import { Alert, Button, ButtonGroup } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-function NoteItems({
-  data,
-  setData,
-  setText,
-  setActiveButton,
-  setActiveIndex,
-}) {
+import { useNotes } from "../Contexts/NotesContext";
+function NoteItems() {
+  const { data, setData, setText, setActiveButton, setActiveIndex } =
+    useNotes();
+
   const handleClick = (e) => {
     const deletedItem = e.target.value;
     setData(data.filter((item) => item !== deletedItem));
   };
+  
   const handleEdit = (e) => {
     setText(e.target.value);
     setActiveButton(true);
