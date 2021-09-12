@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormContainer from "../FormContainer";
 import NoteItems from "../NoteItems";
 
-function NoteContainer({ data, setData }) {
+function NoteContainer({ data, setData }) {  
   const [text, setText] = useState("");
   const [activeButton, setActiveButton] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);

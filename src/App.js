@@ -11,10 +11,10 @@ const App = () => {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/posts/:postId">
+          <Route exact path="/posts/:postId">
             <NoteDetails data={data} />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <NoteContainer data={data} setData={setData} />
           </Route>
         </Switch>

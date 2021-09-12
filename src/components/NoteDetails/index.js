@@ -4,9 +4,7 @@ import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 function NoteDetails({ data }) {
-  let { postId } = useParams();
-  console.log("postId :" + postId);
-  console.log(data[postId]);
+  let { postId } = useParams(); 
   return (
     <div className="note_details">
       <h1>Note Details</h1>
